@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Perlovka Shoes</string>
+    <string name="logo_content_description">Ano Shoes Logo</string>
+    <string name="hint_email">example@gmail.com</string>
+    <string name="hint_password">your password</string>
+    <string name="email_text">Email:</string>
+    <string name="password_text">Password:</string>
+    <string name="login_button">Login</string>
+    <string name="signup_button">Sign Up</string>
+    <!--  Welcome Fragment  -->
+    <string name="welcome_button">Next</string>
+    <string name="welcome_content">WELCOME TO PERLOVKA SHOE STORE. WE\'RE EXITED YOU\’R HERE!</string>
+    <!--  Instruction Fragment  -->
+    <string name="instruction_content">LET\'S START BY GETTING YOU BEST READY FOR THE BEST APP EXPERIENCE.</string>
+    <string name="instruction_text_content">MAKE YOUR OWN SHOE LIST</string>
+    <string name="instruction_button">Lets Start!</string>
+    <string name="add">Button to add new shoe</string>
+    <!--  Logout Menu  -->
+    <string name="logout">Log out</string>
+
+
+
+</resources>
