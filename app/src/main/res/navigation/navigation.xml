@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.perlovka.shoeStore.screens.login.LoginFragment"
+        android:name="com.perlovka.shoeStore.screens.onboarding.LoginFragment"
         android:label="Login"
         tools:layout="@layout/login_fragment">
         <action
@@ -18,10 +18,13 @@
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_loginFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/instructionFragment"
-        android:name="com.perlovka.shoeStore.screens.instruction.InstructionFragment"
+        android:name="com.perlovka.shoeStore.screens.onboarding.InstructionFragment"
         android:label="Instruction">
         <action
             android:id="@+id/action_instructionFragment_to_shoeList"
@@ -35,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.perlovka.shoeStore.screens.welcome.WelcomeFragment"
+        android:name="com.perlovka.shoeStore.screens.onboarding.WelcomeFragment"
         android:label="Welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_instructionFragment"
@@ -62,5 +65,11 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.perlovka.shoeStore.screens.detail.DetailFragment"
-        android:label="Detail" />
+        android:label="Detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
 </navigation>

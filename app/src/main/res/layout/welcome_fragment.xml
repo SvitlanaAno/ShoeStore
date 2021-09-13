@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context="com.perlovka.shoeStore.screens.welcome.WelcomeFragment">
+    tools:context="com.perlovka.shoeStore.screens.onboarding.WelcomeFragment">
 
     <TextView
         android:id="@+id/instruction_content_text"

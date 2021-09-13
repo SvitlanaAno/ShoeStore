@@ -10,9 +10,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.perlovka.shoeStore.R
 import com.perlovka.shoeStore.databinding.ShoeListBinding
-import com.perlovka.shoeStore.screens.login.LoginFragmentDirections
+import com.perlovka.shoeStore.models.UserPreference
+import com.perlovka.shoeStore.models.UserStatus
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class ShoeList: Fragment() {
+    private lateinit var userPreference: UserPreference
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,6 +27,7 @@ class ShoeList: Fragment() {
             inflater, R.layout.shoe_list, container, false
         )
 
+
         // Set action when button is pressed
         binding.fab.setOnClickListener {
             findNavController().navigate(ShoeListDirections.actionShoeListFragmentToDetailFragment())
@@ -30,20 +36,26 @@ class ShoeList: Fragment() {
         return binding.root
 
     }
-    //show SupportActionBar again in onResume() with .show()
+    //Show SupportActionBar again in onResume() with .show()
     override fun onResume() {
         super.onResume()
             val supportActionBar = (requireActivity() as AppCompatActivity).supportActionBar
             supportActionBar?.show()
     }
 
-    // inflate menu resource
+    // Inflate menu resource
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.logout_menu, menu)
     }
+
+    @DelicateCoroutinesApi
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
-    }
+        userPreference = UserPreference(requireContext())
+        GlobalScope.launch{
+            userPreference.saveAuthStatus(UserStatus.UNAUTHENTICATED)
+            }
+            return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                    || super.onOptionsItemSelected(item)
+        }
 }
