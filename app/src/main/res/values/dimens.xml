@@ -3,9 +3,12 @@
     <dimen name="start_margin">24dp</dimen>
     <dimen name="end_margin">24dp</dimen>
     <dimen name="padding">24dp</dimen>
+    <dimen name="padding_card">16sp</dimen>
     <dimen name="drawable_padding">8dp</dimen>
     <dimen name="text_size">16sp</dimen>
     <dimen name="button_text_size">16sp</dimen>
     <dimen name="text_label_size">24sp</dimen>
     <dimen name="padding_text">8dp</dimen>
+    <dimen name="grid_card_width">165dp</dimen>
+    <dimen name="grid_card_height">165dp</dimen>
 </resources>

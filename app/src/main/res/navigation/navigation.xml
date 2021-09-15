@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.perlovka.shoeStore.screens.detail.DetailFragment"
+        android:name="com.perlovka.shoeStore.screens.shoeList.DetailFragment"
         android:label="Detail" >
         <action
             android:id="@+id/action_detailFragment_to_shoeListFragment"

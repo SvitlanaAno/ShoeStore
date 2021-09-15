@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="shoe"
+            type="com.perlovka.shoeStore.models.Shoes" />
+    </data>
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:id="@+id/detail_layout"
@@ -14,7 +20,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context="com.perlovka.shoeStore.screens.detail.DetailFragment">
+            tools:context="com.perlovka.shoeStore.screens.shoeList.DetailFragment">
 
 
             <TextView
@@ -22,25 +28,39 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
-                android:text="TextView"
+                android:text="@string/shoe_details"
+                android:fontFamily="@font/space_mono"
                 android:textSize="@dimen/text_label_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/detail_image"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label"
+                app:srcCompat="@drawable/detail_image"
+                android:contentDescription="@string/content_description_media" />
 
             <EditText
                 android:id="@+id/shoe_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="@font/space_mono"
+                android:hint="@string/shoe_name"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:padding="@dimen/padding_text"
-                android:text="@string/shoe_name"
+                android:text="@={shoe.name}"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/label" />
+                app:layout_constraintTop_toBottomOf="@+id/detail_image" />
 
             <EditText
                 android:id="@+id/company"
@@ -50,7 +70,9 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:padding="@dimen/padding_text"
-                android:text="@string/company"
+                android:hint="@string/company"
+                android:fontFamily="@font/space_mono"
+                android:text="@={shoe.company}"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,10 +83,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPostalAddress"
+                android:hint="@string/shoe_size"
+                android:inputType="number"
                 android:minHeight="48dp"
                 android:padding="@dimen/padding_text"
-                android:text="@string/shoe_size"
+                android:fontFamily="@font/space_mono"
+                android:text="@={shoe.size}"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,17 +99,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textLongMessage|text"
                 android:minHeight="48dp"
                 android:padding="@dimen/padding_text"
-                android:text="@string/description"
+                android:hint="@string/description"
+                android:fontFamily="@font/space_mono"
+                android:text="@={shoe.description}"
+                android:inputType="text"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_size" />
+                app:layout_constraintTop_toBottomOf="@+id/shoe_size"
+                android:autofillHints="" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/action_button_1"
+                android:id="@+id/save"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -100,19 +127,19 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel"
+                android:fontFamily="@font/space_mono"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:capitalize="words"
-                android:text="@android:string/cancel"
+                android:text="@string/cancel"
                 android:textAppearance="
             @style/TextAppearance.MaterialComponents.Headline6"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="@+id/action_button_1"
+                app:layout_constraintBottom_toBottomOf="@+id/save"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/action_button_1"
-                app:layout_constraintTop_toTopOf="@+id/action_button_1" />
+                app:layout_constraintStart_toEndOf="@+id/save"
+                app:layout_constraintTop_toTopOf="@+id/save" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

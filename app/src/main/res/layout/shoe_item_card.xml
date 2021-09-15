@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="shoe_item"
+            type="com.perlovka.shoeStore.models.Shoes" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/shoe_item_layout"
+        android:layout_width="@dimen/grid_card_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardElevation="15dp"
+        app:cardPreventCornerOverlap="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_card">
+
+            <ImageView
+                android:id="@+id/shoe_card_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/grid_card_height"
+                android:contentDescription="@string/content_description_media"
+                android:scaleType="centerCrop"
+                android:src="@drawable/shoe_item" />
+
+            <TextView
+                android:id="@+id/shoe_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/space_mono"
+                android:text="@{shoe_item.name}"
+                android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+            <TextView
+                android:id="@+id/shoe_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/space_mono"
+                android:text="@{shoe_item.description}"
+                android:textAppearance="?attr/textAppearanceBody2" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
