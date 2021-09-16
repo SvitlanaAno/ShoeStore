@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="shoe"
             type="com.perlovka.shoeStore.models.Shoes" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
         android:id="@+id/detail_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="3dp"
         app:cardElevation="2dp">
 
+        <!--Constraint layout flattens the hierarchy. It reduces the nesting level 3 to 1. Which improves the performance
+        of any view and reduce the rendering time.-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,9 +30,9 @@
                 android:id="@+id/label"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/space_mono"
                 android:padding="@dimen/padding_text"
                 android:text="@string/shoe_details"
-                android:fontFamily="@font/space_mono"
                 android:textSize="@dimen/text_label_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -37,12 +41,12 @@
             <ImageView
                 android:id="@+id/detail_image"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="194dp"
+                android:contentDescription="@string/content_description_media"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/label"
-                app:srcCompat="@drawable/detail_image"
-                android:contentDescription="@string/content_description_media" />
+                app:srcCompat="@drawable/detail_image" />
 
             <EditText
                 android:id="@+id/shoe_name"
@@ -54,7 +58,7 @@
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:padding="@dimen/padding_text"
+                android:padding="@dimen/padding_card"
                 android:text="@={shoe.name}"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,11 +70,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="@font/space_mono"
+                android:hint="@string/company"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:padding="@dimen/padding_text"
-                android:hint="@string/company"
-                android:fontFamily="@font/space_mono"
+                android:padding="@dimen/padding_card"
                 android:text="@={shoe.company}"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,38 +87,38 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="@font/space_mono"
                 android:hint="@string/shoe_size"
+                android:importantForAutofill="no"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:padding="@dimen/padding_text"
-                android:fontFamily="@font/space_mono"
+                android:padding="@dimen/padding_card"
                 android:text="@={shoe.size}"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/company"
-                android:importantForAutofill="no" />
+                app:layout_constraintTop_toBottomOf="@+id/company" />
 
             <EditText
                 android:id="@+id/description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:ems="10"
-                android:minHeight="48dp"
-                android:padding="@dimen/padding_text"
-                android:hint="@string/description"
                 android:fontFamily="@font/space_mono"
-                android:text="@={shoe.description}"
+                android:hint="@string/description"
                 android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="@dimen/padding_card"
+                android:text="@={shoe.description}"
                 android:textSize="@dimen/text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_size"
-                android:autofillHints="" />
+                app:layout_constraintTop_toBottomOf="@+id/shoe_size" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/save"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -127,10 +132,10 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel"
-                android:fontFamily="@font/space_mono"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/space_mono"
                 android:text="@string/cancel"
                 android:textAppearance="
             @style/TextAppearance.MaterialComponents.Headline6"

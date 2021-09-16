@@ -3,12 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Using ConstraintLayout to arrange UI elements make sure that it looks identical
-         no matter which size of android device the app runs on. In addition, it lays UI elements with constraint referring to other UI elements
-         making sure the correct size and shape.
-        -->
-    <!--sing ConstraintLayout to arrange UI elements allow in this case to place the views in a convenient way, when every
- one is related to each other. it looks identical no matter which size of android device the app runs on.-->
+    <!-- ConstraintLayout in this case allows to place the views in a convenient way, when every
+ one is related to each other and to not  distort the views in the layout when configuration changes .-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome_layout"
         android:layout_width="match_parent"
