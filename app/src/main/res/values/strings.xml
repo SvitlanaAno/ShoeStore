@@ -10,6 +10,7 @@
     <!--  Welcome Fragment  -->
     <string name="welcome_button">Next</string>
     <string name="welcome_content">WELCOME TO PERLOVKA SHOE STORE. WE\'RE EXITED YOU\’R HERE!</string>
+    <string name="welcome_content2">HERE YOU\'LL CREATE YOUR OWN LIST OF SHOES</string>
     <!--  Instruction Fragment  -->
     <string name="instruction_content">LET\'S START BY GETTING YOU BEST READY FOR THE BEST APP EXPERIENCE.</string>
     <string name="instruction_text_content">MAKE YOUR OWN SHOE LIST</string>
@@ -17,6 +18,7 @@
     <string name="add">Button to add new shoe</string>
     <!--  Logout Menu  -->
     <string name="logout">Log out</string>
+    <!--  Detail Fragment  -->
     <string name="shoe_name">Shoe Name</string>
     <string name="company">Company</string>
     <string name="shoe_size">Size</string>

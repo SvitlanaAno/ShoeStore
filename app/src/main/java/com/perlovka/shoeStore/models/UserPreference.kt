@@ -11,16 +11,12 @@ import kotlinx.coroutines.flow.map
 private val Context.dataStore by preferencesDataStore("user_preferences")
 
 class UserPreference(context: Context) {
-
     private val dataStore = context.dataStore
 
-
+    //Get auth status
     val authStatus: Flow<UserStatus> = dataStore.data
         .map { preferences ->
-            // No type safety.
-            val status = preferences[USER_STATUS] ?: false
-
-            when (status) {
+            when (preferences[USER_STATUS] ?: false) {
                 false -> UserStatus.UNAUTHENTICATED
                 true -> UserStatus.AUTHENTICATED
             }

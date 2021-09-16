@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         //Set of ids for all top level destinations.
         val topLevelDestinations = mutableSetOf<Int>()
         topLevelDestinations.add(R.id.loginFragment)
+        topLevelDestinations.add(R.id.welcomeFragment)
         topLevelDestinations.add(R.id.shoeListFragment)
 
          // Connect the navigation controller to the NavHostFragment
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-        //val appBarConfiguration = AppBarConfiguration(navController.graph)
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
     }
 

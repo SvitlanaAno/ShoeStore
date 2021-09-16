@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#FF000000</color>
     <color name="colorPrimaryDark">#FF000000</color>
-    <color name="colorAccent">#F44336</color>
+    <color name="colorAccent">#FFC107</color>
     <color name="black">#FF000000</color>
     <color name="loginPageFielaColor">#68D6D5D5</color>
     <color name="login_color">#000000</color>

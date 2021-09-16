@@ -1,13 +1,10 @@
 package com.perlovka.shoeStore.screens.onboarding
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -42,26 +39,28 @@ class LoginFragment : Fragment() {
                 }
         })
 
-        // Set action when button is pressed
+        // Set action when Login button is pressed
         binding.loginButton.setOnClickListener {
             loginSigUpButtonClicked(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
         }
+        // Set action when SignUp button is pressed
         binding.signupButton.setOnClickListener {
             loginSigUpButtonClicked(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
         }
             return binding.root
         }
 
+/*
     // Hide the SupportActionBar in onResume() with .hide() method
     override fun onResume() {
         super.onResume()
         val supportActionBar: ActionBar? = (requireActivity() as AppCompatActivity).supportActionBar
         supportActionBar?.hide()
     }
+*/
 
     private fun loginSigUpButtonClicked(email: String, password: String){
-        Log.i("Login Frsgment", "Check email")
-        when(!email.isBlank() && password.isNotBlank()){
+        when(email.isNotBlank() && password.isNotBlank()){
             true -> {
                 // Navigate to next fragment
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())

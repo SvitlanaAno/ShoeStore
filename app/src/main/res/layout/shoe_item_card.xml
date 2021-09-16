@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
 
         <variable
             name="shoe_item"
             type="com.perlovka.shoeStore.models.Shoes" />
     </data>
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/shoe_item_layout"
         android:layout_width="@dimen/grid_card_width"
@@ -47,7 +45,6 @@
                 android:fontFamily="@font/space_mono"
                 android:text="@{shoe_item.description}"
                 android:textAppearance="?attr/textAppearanceBody2" />
-
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

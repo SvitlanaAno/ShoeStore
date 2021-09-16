@@ -3,7 +3,6 @@ package com.perlovka.shoeStore.screens.shoeList
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -65,13 +64,13 @@ class ShoeList: Fragment() {
         }
     }
 
-    //Show SupportActionBar again in onResume() with .show()
+    /*//Show SupportActionBar again in onResume() with .show()
     override fun onResume() {
         super.onResume()
             val supportActionBar = (requireActivity() as AppCompatActivity).supportActionBar
             supportActionBar?.show()
     }
-
+*/
     // Inflate menu resource
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
