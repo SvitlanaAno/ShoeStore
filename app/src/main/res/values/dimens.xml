@@ -3,7 +3,7 @@
     <dimen name="start_margin">24dp</dimen>
     <dimen name="end_margin">24dp</dimen>
     <dimen name="padding">24dp</dimen>
-    <dimen name="padding_card">16sp</dimen>
+    <dimen name="padding_card">16dp</dimen>
     <dimen name="drawable_padding">8dp</dimen>
     <dimen name="text_size">16sp</dimen>
     <dimen name="button_text_size">16sp</dimen>
