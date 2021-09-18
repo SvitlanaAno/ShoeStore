@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- ConstraintLayout in this case allows to place the views in a convenient way, when every
- one is related to each other and to not  distort the views in the layout when configuration changes .-->
+ one is related to each other and to not  distort the views in the layout when configuration changes-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome_layout"
         android:layout_width="match_parent"

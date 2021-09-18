@@ -20,7 +20,7 @@
         app:cardElevation="2dp">
 
         <!--Constraint layout flattens the hierarchy. It reduces the nesting level 3 to 1. Which improves the performance
-        of any view and reduce the rendering time.-->
+        of any view and reduce the rendering time-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

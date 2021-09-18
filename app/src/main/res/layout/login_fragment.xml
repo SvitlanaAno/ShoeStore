@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--    ConstraintLayout in this case flattens nested components tree which increases the performance. -->
+    <!--    ConstraintLayout in this case flattens nested components tree which increases the performance -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login_layout"
         android:layout_width="match_parent"
